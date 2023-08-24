@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  canvas {
+    border: 1px solid black;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="400" height="400"></canvas>
+
+<script>
+  // Récupération du contexte du canvas
+  var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d");
+
+  // Dessin des contours de la maison
+  ctx.beginPath();
+  ctx.moveTo(150, 300); // Coin inférieur gauche
+  ctx.lineTo(250, 300); // Coin inférieur droit
+  ctx.lineTo(250, 200); // Coin supérieur droit
+  ctx.lineTo(200, 150); // Sommet du toit
+  ctx.lineTo(150, 200); // Coin supérieur gauche
+  ctx.closePath();
+  ctx.stroke();
+
+  // Dessin de la porte
+  ctx.beginPath();
+  ctx.rect(180,240, 40, 60);
+  ctx.stroke();
+
+  // Tracer une ligne horizontale
+  ctx.beginPath();
+  ctx.moveTo(150, 200); // Point de départ (x, y)
+  ctx.lineTo(250, 200); // Point d'arrivée (x, y)
+  ctx.stroke(); // Dessiner la ligne
+
+
+  // Dessin de la fenêtre gauche
+  ctx.beginPath();
+ // ctx.rect(160, 220, 40, 40);
+  ctx.stroke();
+
+  // Dessin de la fenêtre droite
+  ctx.beginPath();
+  //ctx.rect(240, 220, 40, 40);
+  ctx.stroke();
+</script>
+
+</body>
+</html>
